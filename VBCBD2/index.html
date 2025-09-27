@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Celebrants</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>🎂 Birthday Celebrants</h2>
+
+  <!-- Today’s celebrants -->
+  <h3>🎉 Today</h3>
+  <div id="todayBox" class="card">Loading...</div>
+  <button onclick="checkTodaysBirthdays()">🔄 Refresh Today</button>
+
+  <!-- Search by month -->
+  <h3>📅 Search by Month</h3>
+  <select id="monthSelect"></select>
+  <button onclick="searchByMonth()">🔍 Search</button>
+  <div id="monthBox" class="card">No month searched yet.</div>
+
+  <!-- Add/Edit form -->
+  <h3>➕ Add / ✏️ Edit Celebrant</h3>
+  <form id="celebrantForm" onsubmit="saveCelebrant(event)">
+    <input type="hidden" id="editIndex">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="date" id="dob" required>
+    <input type="text" id="verse" placeholder="Verse">
+    <input type="text" id="blessing" placeholder="Blessing">
+    <input type="text" id="photo" placeholder="Photo URL (optional)">
+    <button type="submit">💾 Save</button>
+  </form>
+
+  <!-- All celebrants list -->
+  <h3>📋 All Celebrants</h3>
+  <div id="allBox" class="card"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
